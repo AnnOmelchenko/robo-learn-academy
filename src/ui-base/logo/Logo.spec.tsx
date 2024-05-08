@@ -10,13 +10,13 @@ describe('Logo component', () => {
         const logo = screen.getByTestId('logo')
         expect(logo).toBeInTheDocument()
 
-        const wiseyText = screen.getByText('WISEY')
-        expect(wiseyText).toBeInTheDocument()
+        const roboText = screen.getByText('ROBO')
+        expect(roboText).toBeInTheDocument()
 
-        const studyText = screen.getByText('STUDY')
-        expect(studyText).toBeInTheDocument()
+        const learnText = screen.getByText('Learn')
+        expect(learnText).toBeInTheDocument()
 
-        expect(wiseyText).toHaveClass('wisey')
-        expect(studyText).toHaveClass('study')
+        expect(roboText).toHaveClass('robo')
+        expect(learnText).toHaveClass('learn')
     })
 })
