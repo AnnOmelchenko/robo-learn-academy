@@ -90,7 +90,7 @@ export const ArduinoPage = () => {
             )}
           </div>
 
-          <h3 className="subtitle">Write your code here:</h3>
+          <h3 className="subtitle">The LED is located under output port number 7. <br/> Write your code here:</h3>
 
           <textarea onChange={handleTextChange} value={value} placeholder={arduinoCode} style={{ width: '100%'}} rows={20} />
 

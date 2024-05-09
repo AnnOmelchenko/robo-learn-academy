@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 
-import { CoursePage } from './pages/coursePage/CoursePage'
-import CoursesListPage from './pages/coursesListPage/CoursesListPage'
+import { LessonPage } from './pages/lessonPage/LessonPage'
+import LessonsListPage from './pages/lessonsListPage/LessonsListPage'
 import { ArduinoPage } from './pages/arduinoPage/ArduinoPage'
 
 interface AppRoute {
@@ -20,35 +20,35 @@ export const RoutesManager = {
       getURL: () => '/home',
     },
   },
-  courses: {
+  lessons: {
     root: {
-      pattern: '/courses',
-      getURL: () => '/courses',
+      pattern: '/lessons',
+      getURL: () => '/lessons',
     },
   },
   view: {
     root: {
-      pattern: '/courses/view/:id/*',
-      getURL: ({ id }: getURLParams) => `/courses/view/${id}`,
+      pattern: '/lessons/view/:id/*',
+      getURL: ({ id }: getURLParams) => `/lessons/view/${id}`,
     },
   },
   arduino: {
     root: {
-      // pattern: '/courses/arduino/:id/*',
-      // getURL: ({ id }: getURLParams) => `/courses/arduino/${id}`,
-      pattern: '/courses/arduino',
-      getURL: () => `/courses/arduino`,
+      // pattern: '/lessons/arduino/:id/*',
+      // getURL: ({ id }: getURLParams) => `/lessons/arduino/${id}`,
+      pattern: '/lessons/arduino',
+      getURL: () => `/lessons/arduino`,
     },
   },
 }
 
 export const routes: AppRoute[] = [
   {
-    component: <CoursesListPage />,
+    component: <LessonsListPage />,
     path: RoutesManager.home.root.pattern,
   },
   {
-    component: <CoursePage />,
+    component: <LessonPage />,
     path: RoutesManager.view.root.pattern,
   },
   {

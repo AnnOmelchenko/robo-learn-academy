@@ -58,18 +58,10 @@
   }
 }
 
-.courseSpinner {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  height: 100%;
-  align-items: center;
-  margin: 0;
-}
-
 .subtitle {
   font-size: 22px;
   margin-bottom: 12px;
+  text-align: center;
 }
 
 .loaderWrapper {

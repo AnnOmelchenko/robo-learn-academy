@@ -49,12 +49,12 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### The view layer is divided into:
  
-- ### Presentation: This layer accepts data and throws events. It does not have access to the API (Header, Loader, Spinner, CourseDetails, CourseLesson, CoursesListPage, CourseSection, SkillsSection)
+- ### Presentation: This layer accepts data and throws events. It does not have access to the API (Header, Loader, Spinner, LessonDetails, LessonLesson, LessonsListPage, LessonSection, SkillsSection)
 
 - ### Structural: This layer is responsible for the structure (App, Layout)
 
-- ### Container: This layer communicates with the Application layer (CoursePage, CoursesList)
+- ### Container: This layer communicates with the Application layer (LessonPage, LessonsList)
 
-### The Аpplication layer contains hooks and communicates with the API layer (useUpdateVideoMeta, useCurrentLesson, usePreviewCourse, usePreviewCourses, useToken)
+### The Аpplication layer contains hooks and communicates with the API layer (useUpdateVideoMeta, useCurrentLesson, usePreviewLesson, usePreviewLessons, useToken)
 
-### The API layer contains requests to the server, API providers and communicates with the Domain (fetchPreviewCourse, fetchPreviewCourses, fetchToken, ApiProvider, AuthProvider)
+### The API layer contains requests to the server, API providers and communicates with the Domain (fetchPreviewLesson, fetchPreviewLessons, fetchToken, ApiProvider, AuthProvider)
