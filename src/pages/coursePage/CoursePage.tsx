@@ -1,5 +1,5 @@
 import { useRef, useMemo } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 
 import './CoursePage.styled.scss'
 
@@ -10,6 +10,7 @@ import { useCurrentLesson } from '../../hooks/useCurrentLesson'
 import { useUpdateVideoMeta } from '../../hooks/useUpdateVideoMeta'
 import { CourseLesson } from './components/courseLesson/CourseLesson'
 import { Lesson } from '../../types/courses/courses'
+import { RoutesManager } from '../../routesManager'
 
 export const CoursePage = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null)
@@ -43,6 +44,9 @@ export const CoursePage = () => {
                 <div className="videoWrapper">
                   <video ref={videoRef} id={currentLesson?.link} src={currentLesson?.link} controls data-testid="course-video" />
                   <h4 className='subtitle'>{`${currentLesson?.order}. ${currentLesson?.title}`}</h4>
+                  <Link to={RoutesManager.arduino.root.getURL()} className="course">
+                    <button>Arduino playground</button>
+                  </Link>
                 </div>
 
                 <div>

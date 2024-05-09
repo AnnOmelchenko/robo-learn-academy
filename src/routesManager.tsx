@@ -2,6 +2,7 @@ import { ReactElement } from 'react'
 
 import { CoursePage } from './pages/coursePage/CoursePage'
 import CoursesListPage from './pages/coursesListPage/CoursesListPage'
+import { ArduinoPage } from './pages/arduinoPage/ArduinoPage'
 
 interface AppRoute {
   component: ReactElement
@@ -31,6 +32,14 @@ export const RoutesManager = {
       getURL: ({ id }: getURLParams) => `/courses/view/${id}`,
     },
   },
+  arduino: {
+    root: {
+      // pattern: '/courses/arduino/:id/*',
+      // getURL: ({ id }: getURLParams) => `/courses/arduino/${id}`,
+      pattern: '/courses/arduino',
+      getURL: () => `/courses/arduino`,
+    },
+  },
 }
 
 export const routes: AppRoute[] = [
@@ -41,5 +50,9 @@ export const routes: AppRoute[] = [
   {
     component: <CoursePage />,
     path: RoutesManager.view.root.pattern,
+  },
+  {
+    component: <ArduinoPage />,
+    path: RoutesManager.arduino.root.pattern,
   },
 ]
