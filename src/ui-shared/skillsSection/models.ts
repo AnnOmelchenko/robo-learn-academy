@@ -1,5 +1,5 @@
-import { Meta } from "../../types/courses/courses";
+import { LessonDTO } from "../../types/lessons/lessons";
 
 export interface ISkillsSectionProps {
-  skills: Meta['skills']
+  skills: LessonDTO['skills']
 }

@@ -1,36 +1,31 @@
 import { useCallback, useEffect } from 'react'
-import { Course, Lesson } from '../types/courses/courses'
-import { attachHlsMedia } from '../utils/attachHlsMedia'
+import { LessonDTO } from '../types/lessons/lessons'
 
-export const useUpdateVideoMeta = (id?: Course['id'], currentLesson?: Lesson['order'], isLoading?: boolean, videoRefCurrent?: HTMLVideoElement | null) => {
+export const useUpdateVideoMeta = (id?: LessonDTO['id'], videoRefCurrent?: HTMLIFrameElement | null) => {
     const updateVideoMeta = useCallback(
-        (video: HTMLMediaElement) => {
+        (video: HTMLIFrameElement) => {
             if (id) {
                 const videoMeta = {
                     id,
-                    currentLesson,
-                    currentTime: video.currentTime,
+                    currentTime: video,
                 }
                 window.localStorage.setItem(id, JSON.stringify(videoMeta))
             }
         },
-        [id, currentLesson],
+        [id],
     )
 
     useEffect(() => {
-        if (!isLoading && currentLesson) {
-            if (videoRefCurrent) {
-                attachHlsMedia(videoRefCurrent)
+        if (videoRefCurrent) {
 
-                videoRefCurrent.addEventListener('timeupdate', () =>
-                    updateVideoMeta(videoRefCurrent as HTMLMediaElement),
+            videoRefCurrent.addEventListener('timeupdate', () =>
+                updateVideoMeta(videoRefCurrent as HTMLIFrameElement),
+            )
+
+            return () =>
+                videoRefCurrent?.removeEventListener('timeupdate', () =>
+                    updateVideoMeta(videoRefCurrent as HTMLIFrameElement),
                 )
-
-                return () =>
-                    videoRefCurrent?.removeEventListener('timeupdate', () =>
-                        updateVideoMeta(videoRefCurrent as HTMLMediaElement),
-                    )
-            }
         }
-    }, [isLoading, currentLesson, updateVideoMeta, videoRefCurrent])
+    }, [updateVideoMeta, videoRefCurrent])
 }
