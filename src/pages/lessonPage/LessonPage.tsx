@@ -31,7 +31,7 @@ export const LessonPage = () => {
               <SkillsSection skills={data.skills} />
               <div className='arduinoWrapper'>
                 <h3 className="subtitle">Improve your skills. Try to program it yourself in the Arduino simulator:</h3>
-                <Link to={RoutesManager.arduino.root.getURL()} className='buttonWrapper'>
+                <Link to={RoutesManager.arduino.root.getURL({ id })} className='buttonWrapper'>
                   <button className='arduinoButton'>Arduino playground</button>
                 </Link>
               </div>
