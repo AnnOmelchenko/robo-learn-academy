@@ -10,7 +10,7 @@ interface AppRoute {
 }
 
 interface getURLParams {
-  id: string | number
+  id?: string | number
 }
 
 export const RoutesManager = {
@@ -34,10 +34,8 @@ export const RoutesManager = {
   },
   arduino: {
     root: {
-      // pattern: '/lessons/arduino/:id/*',
-      // getURL: ({ id }: getURLParams) => `/lessons/arduino/${id}`,
-      pattern: '/lessons/arduino',
-      getURL: () => `/lessons/arduino`,
+      pattern: '/lessons/arduino/:id/*',
+      getURL: ({ id }: getURLParams) => `/lessons/arduino/${id}`,
     },
   },
 }

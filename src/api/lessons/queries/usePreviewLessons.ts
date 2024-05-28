@@ -1,4 +1,6 @@
 import { LessonDTO } from "../../../types/lessons/lessons"
+import { LessonOne } from "../../../pages/arduinoPage/components/LessonOne";
+import { LessonTwo } from "../../../pages/arduinoPage/components/LessonTwo";
 
 export const usePreviewLessons = (): LessonDTO[] => {
   return [
@@ -18,17 +20,27 @@ export const usePreviewLessons = (): LessonDTO[] => {
         "Logical thinking",
         "Understanding of sequential control",
         "Simulation skills"
-      ]
+      ],
+      arduinoPage: LessonOne(),
     },
     {
       id: 'lesson2',
-      title: 'Other lesson',
-      videoUrl: 'https://www.youtube.com/embed/e1FVSpkw6q4?si=TJnyAJ--KJSZEo51',
+      title: 'Arduino Pulse-Width-Modulation',
+      videoUrl: 'https://www.youtube.com/embed/7OYLakRyjTc?si=Y4N6w-xFqhT1yps9',
       rating: '4.5',
-      description: '',
-      launchDate: '',
-      previewImageLink: 'https://upload.wikimedia.org/wikipedia/commons/3/38/Arduino_Uno_-_R3.jpg',
-      skills: ['']
+      description: 'Dive into the fascinating world of Pulse Width Modulation (PWM) with our comprehensive Arduino PWM lesson. This lesson is designed to equip you with the skills and knowledge to effectively utilize PWM in a variety of Arduino projects. Whether you`re a beginner or an experienced maker, you`ll find valuable insights and practical applications that will enhance your understanding and capabilities.',
+      launchDate: 'Wed Oct 19 2023',
+      previewImageLink: 'https://i0.wp.com/randomnerdtutorials.com/wp-content/uploads/2018/10/esp32-pwm-thumbnail.jpg?fit=1280%2C720&quality=100&strip=all&ssl=1',
+      skills: [
+        "Understanding PWM Concepts",
+        "Arduino PWM Capabilities",
+        "Generating PWM Signals",
+        "Controlling LED Brightness",
+        "Motor Speed Control",
+        "Programming Skills",
+        "Circuit Design"
+    ],
+      arduinoPage: LessonTwo(),
     }
   ]
 }

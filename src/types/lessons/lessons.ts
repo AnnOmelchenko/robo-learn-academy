@@ -7,4 +7,5 @@ export interface LessonDTO {
   description: string
   launchDate: string
   previewImageLink: string
+  arduinoPage?: JSX.Element
 }
