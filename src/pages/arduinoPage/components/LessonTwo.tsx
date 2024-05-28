@@ -26,7 +26,7 @@ export const LessonTwo = () => {
             delay(20);
             brightness++;
         }
-    `.trim();
+    `;
 
     const [value, setValue] = useState<string | undefined>(arduinoCode);
 
@@ -79,15 +79,16 @@ export const LessonTwo = () => {
         <>
             <div className="componentWrapper">
                 {isLoading ? <Spinner /> : (
-                <div className="componentWrapper">
-                    <wokwi-led color="green" value={ledState ? true : undefined} brightness={brightness} />
-                </div>
+                    <>
+                        <wokwi-arduino-uno />
+                        <wokwi-led color="green" value={ledState ? true : undefined} brightness={brightness} />
+                    </>
                 )}
             </div>
 
             <h3 className="subtitle">The LED is located under output port number 11. <br/> Write your code here:</h3>
 
-            <Editor height="50vh" defaultLanguage="cpp" defaultValue={arduinoCode} onChange={handleTextChange} />
+            <Editor height="40vh" defaultLanguage="cpp" defaultValue={arduinoCode} onChange={handleTextChange} />
 
             <div className={classNames('buttonRun', { 'active': isActiveRun })} onClick={handleRunCode}>
                 <span>Run</span>

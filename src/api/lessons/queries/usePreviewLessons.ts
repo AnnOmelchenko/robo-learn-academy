@@ -1,6 +1,7 @@
 import { LessonDTO } from "../../../types/lessons/lessons"
 import { LessonOne } from "../../../pages/arduinoPage/components/LessonOne";
 import { LessonTwo } from "../../../pages/arduinoPage/components/LessonTwo";
+import { LessonThree } from "../../../pages/arduinoPage/components/LessonThree";
 
 export const usePreviewLessons = (): LessonDTO[] => {
   return [
@@ -41,6 +42,29 @@ export const usePreviewLessons = (): LessonDTO[] => {
         "Circuit Design"
     ],
       arduinoPage: LessonTwo(),
+    },
+    {
+      id: 'lesson3',
+      title: 'Program a Push Buttons',
+      videoUrl: 'https://www.youtube.com/embed/8j4a3A9Jeqw?si=gICBSGjeaBWqmTRu',
+      rating: '4.7',
+      description: 'In this lesson, you will learn how to interface a push button with an Arduino microcontroller. The lesson will cover the basics of digital input, debouncing techniques, and writing simple Arduino sketches to read the state of a push button and perform actions based on its state.',
+      launchDate: 'Fri Mar 03 2022',
+      previewImageLink: 'https://www.circuits-diy.com/wp-content/uploads/2023/02/push-button-arduino-tutorial-1.png',
+      skills: [
+        "Understanding Digital Inputs",
+        "Circuit Building",
+        "Arduino Programming",
+        "Serial Communication",
+        "Implementing Debouncing",
+        "Conditional Logic",
+        "LED Control",
+        "Time Management in Code",
+        "Problem-Solving",
+        "Hands-On Electronics Experience"
+      ],
+      arduinoPage: LessonThree(),
     }
   ]
 }
+

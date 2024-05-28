@@ -58,15 +58,16 @@ export const LessonOne = () => {
         <>
             <div className="componentWrapper">
                 {isLoading ? <Spinner /> : (
-                <div className="componentWrapper">
-                    <wokwi-led color="red" value={ledState ? true : undefined} />
-                </div>
+                    <>
+                        <wokwi-arduino-uno />
+                        <wokwi-led color="red" value={ledState ? true : undefined} />
+                    </>
                 )}
             </div>
 
             <h3 className="subtitle">The LED is located under output port number 7. <br/> Write your code here:</h3>
 
-            <Editor height="50vh" defaultLanguage="cpp" defaultValue={arduinoCode} onChange={handleTextChange} />
+            <Editor height="40vh" defaultLanguage="cpp" defaultValue={arduinoCode} onChange={handleTextChange} />
 
             <div className={classNames('buttonRun', { 'active': isActiveRun })} onClick={handleRunCode}>
                 <span>Run</span>
