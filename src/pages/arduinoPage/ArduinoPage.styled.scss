@@ -19,12 +19,11 @@
 
   .componentWrapper {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    grid-gap: 20px;
+    grid-gap: 60px;
     margin-top: 22px;
-    height: 140px;
+    height: 240px;
 
     @media (max-width: 800px) {
       grid-template-columns: 100%;
