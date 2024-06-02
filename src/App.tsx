@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import './App.scss'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
@@ -8,16 +7,6 @@ import { ScrollToTop } from './providers/scrollRestoration/ScrollToTop'
 import { routes, RoutesManager } from './routesManager'
 import { ThemeContext } from './providers/styles/ThemeContext'
 import { Theme } from './types/theme/theme'
-
-export const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: false,
-      refetchOnWindowFocus: false,
-      staleTime: 1000 * 20,
-    },
-  },
-})
 
 export const App = () => {
   const isBrowserDefaultDark = () => window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -30,27 +19,25 @@ export const App = () => {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
-          <div className={`theme-${theme}`}>
-            <div className='app'>
-              <Layout>
-                <ScrollToTop>
-                  <Routes>
-                    <Route
-                      path="*"
-                      element={<Navigate to={RoutesManager.home.root.getURL()} replace />}
-                    />
-                    {routes.map(({ component, path }) => (
-                      <Route path={path} element={component} key={path} />
-                    ))}
-                  </Routes>
-                </ScrollToTop>
-              </Layout>
-            </div>
+      <BrowserRouter>
+        <div className={`theme-${theme}`}>
+          <div className='app'>
+            <Layout>
+              <ScrollToTop>
+                <Routes>
+                  <Route
+                    path="*"
+                    element={<Navigate to={RoutesManager.home.root.getURL()} replace />}
+                  />
+                  {routes.map(({ component, path }) => (
+                    <Route path={path} element={component} key={path} />
+                  ))}
+                </Routes>
+              </ScrollToTop>
+            </Layout>
           </div>
-        </BrowserRouter>
-      </QueryClientProvider>
+        </div>
+      </BrowserRouter>
     </ThemeContext.Provider>
   )
 }
