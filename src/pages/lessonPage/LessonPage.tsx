@@ -5,7 +5,6 @@ import './LessonPage.styled.scss'
 
 import { LessonDetails } from './components/lessonDetails/LessonDetails'
 import { usePreviewLesson } from '../../api/lessons/queries/usePreviewLesson'
-import { useUpdateVideoMeta } from '../../hooks/useUpdateVideoMeta'
 import { RoutesManager } from '../../routesManager'
 import { SkillsSection } from '../../ui-shared/skillsSection/SkillsSection'
 
@@ -13,8 +12,6 @@ export const LessonPage = () => {
   const videoRef = useRef<HTMLIFrameElement | null>(null)
   const { id } = useParams<{ id: string }>()
   const data = usePreviewLesson(id!);
-
-  useUpdateVideoMeta(id, videoRef.current)
 
   return (
     <div className="lessonPage">
