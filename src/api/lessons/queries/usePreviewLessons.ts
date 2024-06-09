@@ -1,8 +1,8 @@
 import { LessonDTO } from "../../../types/lessons/lessons"
-import { LessonOne } from "../../../pages/arduinoPage/components/LessonOne";
-import { LessonTwo } from "../../../pages/arduinoPage/components/LessonTwo";
-import { LessonThree } from "../../../pages/arduinoPage/components/LessonThree";
-import { LessonFour } from "../../../pages/arduinoPage/components/LessonFour";
+import { LessonOne } from "../../../pages/arduinoPage/lessons/LessonOne";
+import { LessonTwo } from "../../../pages/arduinoPage/lessons/LessonTwo";
+import { LessonThree } from "../../../pages/arduinoPage/lessons/LessonThree";
+import { LessonFour } from "../../../pages/arduinoPage/lessons/LessonFour";
 
 export const usePreviewLessons = (): LessonDTO[] => {
   return [
