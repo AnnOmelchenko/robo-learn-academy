@@ -1,6 +1,7 @@
 import { parse } from "intel-hex";
 import { Buffer } from 'buffer';
 import { CPU, AVRIOPort, portDConfig } from "avr8js";
+import { useCompileArduino } from "../../api/lessons/queries/useCompileArduino";
 
 interface CompiledData {
     port: AVRIOPort
@@ -8,13 +9,7 @@ interface CompiledData {
 }
 
 export const buildHex = async (value: string): Promise<string | undefined> => {
-    const result = await fetch('https://hexi.wokwi.com/build', {
-      method: 'post',
-      body: JSON.stringify({ sketch: value }),
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    });
+    const result = await useCompileArduino(value);
 
     const { hex, stderr } = await result.json();
 

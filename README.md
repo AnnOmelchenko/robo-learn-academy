@@ -7,10 +7,9 @@ DEMO: https://
 This project was created using such technologies:
 - React
 - TypeScript
-- Tanstack
-- Axios
-- HLS
 - React router dom
+- AVRjs
+- Intel hex
 
 ## Available Scripts
 
@@ -55,6 +54,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 - ### Container: This layer communicates with the Application layer (LessonPage, LessonsList)
 
-### The Аpplication layer contains hooks and communicates with the API layer (useUpdateVideoMeta, useCurrentLesson, usePreviewLesson, usePreviewLessons, useToken)
+### The Аpplication layer contains hooks (usePreviewLesson, usePreviewLessonsLessons)
 
-### The API layer contains requests to the server, API providers and communicates with the Domain (fetchPreviewLesson, fetchPreviewLessons, fetchToken, ApiProvider, AuthProvider)
+### The API layer contains requests to the server, API providers and communicates with the Domain (useCompileArduino)

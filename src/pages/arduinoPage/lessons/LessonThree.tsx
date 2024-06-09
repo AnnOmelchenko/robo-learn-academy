@@ -6,6 +6,7 @@ import { buildHex } from "../utils";
 import { PinState } from "avr8js";
 import { AVRRunner } from "../execute";
 import Editor from '@monaco-editor/react';
+import { PushbuttonElement } from "@wokwi/elements";
 
 export const LessonThree = () => {
     const [greenLedState, setGreenLedState] = useState(false);
@@ -13,8 +14,8 @@ export const LessonThree = () => {
     const [redLedState, setRedLedState] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
     const [isActiveRun, setIsActiveRun] = useState(false);
-    const greenButton = useRef(null);
-    const redButton = useRef(null);
+    const greenButton = useRef<PushbuttonElement | null>(null);
+    const redButton = useRef<PushbuttonElement | null>(null);
 
     const arduinoCode = `
     void setup() {
@@ -58,19 +59,15 @@ export const LessonThree = () => {
         setIsActiveRun(true);
         
         runner.execute(() => {
-            // @ts-ignore
             greenButton.current?.addEventListener('button-press', () => {
                 setGreenLedState(true);
             })
-            // @ts-ignore
             greenButton.current?.addEventListener('button-release', () => {
                 setGreenLedState(false);
             })
-            // @ts-ignore
             redButton.current?.addEventListener('button-press', () => {
                 setRedLedState(true);
             })
-            // @ts-ignore
             redButton.current?.addEventListener('button-release', () => {
                 setRedLedState(false);
             })
@@ -88,10 +85,10 @@ export const LessonThree = () => {
                     <>
                         <wokwi-arduino-uno />
                         <wokwi-pushbutton ref={greenButton} color="green" />
-                        <wokwi-led color="green" value={greenLedState ? true : undefined}></wokwi-led>
-                        <wokwi-led color="yellow" value={yellowLedState ? true : undefined}></wokwi-led>
-                        <wokwi-led color="red" value={redLedState ? true : undefined}></wokwi-led>
-                        <wokwi-pushbutton ref={redButton} color="red"></wokwi-pushbutton>
+                        <wokwi-led color="green" value={greenLedState ? true : undefined} />
+                        <wokwi-led color="yellow" value={yellowLedState ? true : undefined} />
+                        <wokwi-led color="red" value={redLedState ? true : undefined} />
+                        <wokwi-pushbutton ref={redButton} color="red" />
                     </>
                 )}
             </div>
