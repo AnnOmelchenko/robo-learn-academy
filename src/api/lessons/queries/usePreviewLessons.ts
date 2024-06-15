@@ -3,6 +3,7 @@ import { LessonOne } from "../../../pages/arduinoPage/lessons/LessonOne";
 import { LessonTwo } from "../../../pages/arduinoPage/lessons/LessonTwo";
 import { LessonThree } from "../../../pages/arduinoPage/lessons/LessonThree";
 import { LessonFour } from "../../../pages/arduinoPage/lessons/LessonFour";
+import { LessonFive } from "../../../pages/arduinoPage/lessons/LessonFive";
 
 export const usePreviewLessons = (): LessonDTO[] => {
   return [
@@ -81,6 +82,22 @@ export const usePreviewLessons = (): LessonDTO[] => {
         "Creating custom animations on a 7-segment display",
       ],
       arduinoPage: LessonFour(),
+    },
+    {
+      id: 'lesson5',
+      title: 'Neopixel-Matrix',
+      videoUrl: 'https://www.youtube.com/embed/_JbHhfZvfGU?si=ZxVidIa6VoUzeSKX',
+      rating: '4.3',
+      description: 'In this lesson, you will learn how to connect and program a 7-segment display with an Arduino, including displaying numbers and characters. You will explore techniques such as creating a countdown timer, troubleshooting common issues, and using multiplexing to control multiple displays. Additionally, you will learn advanced methods like using shift registers and integrating the display with other components for practical applications.',
+      launchDate: 'Mon Apr 09 2023',
+      previewImageLink: 'https://www.dotnetlovers.com/images/SevenSegmentDisplay7192020120357AM.png',
+      skills: [
+        "Understanding the basics of a 7-segment display",
+        "Connecting a 7-segment display to an Arduino board",
+        "Writing code to control a 7-segment display",
+        "Creating custom animations on a 7-segment display",
+      ],
+      arduinoPage: LessonFive(),
     }
   ]
 }

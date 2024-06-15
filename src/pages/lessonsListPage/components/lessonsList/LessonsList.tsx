@@ -9,7 +9,7 @@ import { LessonSection } from '../lessonSection/LessonSection'
 export const LessonsList = () => {
   const data = usePreviewLessons()
   const [startItemOffset, setStartItemOffset] = useState(0)
-  const numberOfItems = 10
+  const numberOfItems = 4
   const endItemOffset = startItemOffset + numberOfItems
   const paginatedLessonsList = data?.slice(startItemOffset, endItemOffset)
   const pageCount = Math.ceil(data?.length! / numberOfItems)
