@@ -18,6 +18,8 @@ export const LessonDetails = ({ description, launchDate, rating }: ILessonDetail
     setCurrentTab(`#${id}`)
   }
 
+  console.log('LessonDetails render')
+
   return (
     <div className="aboutWrapper">
       <div className="buttonsWrapper">
