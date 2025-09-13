@@ -13,6 +13,8 @@ export const LessonPage = () => {
   const { id } = useParams<{ id: string }>()
   const data = usePreviewLesson(id!);
 
+  console.log('LessonPage render')
+
   return (
     <div className="lessonPage">
       {data && (
