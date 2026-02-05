@@ -2,7 +2,7 @@
 
 Your Gateway to Robotics Mastery
 
-DEMO: https://
+DEMO: [https://robo-learn-academy.pages.dev/home](https://robo-learn-academy.pages.dev/home)
 
 This project was created using such technologies:
 - React
